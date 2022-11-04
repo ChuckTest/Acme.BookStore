@@ -89,7 +89,7 @@ public class BookStoreDbContext :
         builder.Entity<Book>(b =>
         {
             b.ToTable(BookStoreConsts.DbTablePrefix + "Books",
-                BookStoreConsts.DbSchema);
+                BookStoreConsts.DbSchema);//这里映射出来的表名是AppBooks
             b.ConfigureByConvention(); //auto configure for the base class props
             b.Property(x => x.Name).IsRequired().HasMaxLength(128);
         });
